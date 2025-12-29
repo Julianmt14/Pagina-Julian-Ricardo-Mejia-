@@ -18,18 +18,6 @@ create_*.sh
 .DS_Store
 Thumbs.db
 
-# Node.js
-.env
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Database
-*.db
-*.sqlite
-*.sqlite3
-
 # Logs
 logs/
 *.log

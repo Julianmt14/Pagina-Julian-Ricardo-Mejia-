@@ -63,58 +63,6 @@ window.addEventListener('scroll', function() {
     });
 });
 
-// Contact form handling
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(this);
-    const data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        subject: formData.get('subject'),
-        message: formData.get('message')
-    };
-    
-    // Basic validation
-    if (!data.name || !data.email || !data.subject || !data.message) {
-        showNotification('Por favor completa todos los campos', 'error');
-        return;
-    }
-    
-    if (!isValidEmail(data.email)) {
-        showNotification('Por favor ingresa un email válido', 'error');
-        return;
-    }
-    
-    try {
-        // Determine API URL based on environment
-        const apiUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-            ? 'http://localhost:3000/api/contact'
-            : '/api/contact';
-        
-        const response = await fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        });
-        
-        const result = await response.json();
-        
-        if (response.ok && result.success) {
-            showNotification('¡Mensaje enviado con éxito! Te contactaré pronto.', 'success');
-            this.reset();
-        } else {
-            showNotification(result.error || 'Error al enviar el mensaje. Intenta nuevamente.', 'error');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        showNotification('Error de conexión. Por favor intenta más tarde o contáctame directamente por WhatsApp.', 'error');
-    }
-});
-
 // Email validation function
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -368,4 +316,44 @@ style.textContent = `
         width: 100% !important;
     }
 `;
+document.head.appendChild(style);
+
+// Copy email to clipboard
+function copyEmail() {
+    const email = 'julianricardomt@gmail.com';
+    
+    // Try modern clipboard API first
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(() => {
+            showNotification('¡Email copiado al portapapeles!', 'success');
+        }).catch(() => {
+            // Fallback
+            fallbackCopyEmail(email);
+        });
+    } else {
+        // Fallback for older browsers
+        fallbackCopyEmail(email);
+    }
+}
+
+// Fallback copy method for older browsers
+function fallbackCopyEmail(email) {
+    const textArea = document.createElement('textarea');
+    textArea.value = email;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    textArea.style.top = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        document.execCommand('copy');
+        showNotification('¡Email copiado al portapapeles!', 'success');
+    } catch (err) {
+        showNotification('No se pudo copiar. Email: julianricardomt@gmail.com', 'error');
+    }
+    
+    document.body.removeChild(textArea);
+}
 document.head.appendChild(style);
