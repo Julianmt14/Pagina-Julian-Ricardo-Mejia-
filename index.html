@@ -579,62 +579,64 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Contacto</h2>
-            <div class="contact-content">
-                <div class="contact-info">
+            <div class="contact-content-simple">
+                <div class="contact-intro">
                     <h3>¡Hablemos!</h3>
                     <p>
                         Estoy siempre abierto a nuevas oportunidades y proyectos interesantes. 
-                        Si tienes una idea o simplemente quieres conversar sobre tecnología, no dudes en contactarme.
+                        Puedes contactarme directamente por WhatsApp o correo electrónico.
                     </p>
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p>julianricardomt@gmail.com</p>
-                            </div>
+                </div>
+                
+                <div class="contact-buttons">
+                    <!-- WhatsApp Button -->
+                    <a href="https://api.whatsapp.com/send?phone=573115846717&text=Hola%20Juli%C3%A1n%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="contact-btn whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="btn-content">
+                            <span class="btn-label">WhatsApp</span>
+                            <span class="btn-value">+57 311 584 6717</span>
                         </div>
-                        <div class="contact-method">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Teléfono</h4>
-                                <p>+57 311 584 6717</p>
-                            </div>
+                    </a>
+                    
+                    <!-- Gmail Button -->
+                    <button onclick="copyEmail()" class="contact-btn gmail-btn">
+                        <i class="fas fa-envelope"></i>
+                        <div class="btn-content">
+                            <span class="btn-label">Gmail</span>
+                            <span class="btn-value">julianricardomt@gmail.com</span>
                         </div>
-                        <div class="contact-method">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Ubicación</h4>
-                                <p>Villavicencio, Colombia</p>
-                                <p class="address-detail">Calle 3 sur #30B-03, Barrio San Silvestre 2</p>
-                            </div>
+                    </button>
+                </div>
+                
+                <div class="contact-info-cards">
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Villavicencio, Colombia</p>
                         </div>
                     </div>
-                    <div class="social-links">
-                        <a href="https://github.com/Julianmt14" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/julian-ricardo-mejia-torres-269647171/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
+                    <div class="info-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <h4>Formación</h4>
+                            <p>Ing. Sistemas - USTA</p>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Tu email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Asunto" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Tu mensaje" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-                    </form>
+                
+                <div class="social-links-large">
+                    <a href="https://github.com/Julianmt14" target="_blank" rel="noopener noreferrer" class="social-link-large" title="GitHub">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/julian-ricardo-mejia-torres-269647171/" target="_blank" rel="noopener noreferrer" class="social-link-large" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
                 </div>
             </div>
         </div>
