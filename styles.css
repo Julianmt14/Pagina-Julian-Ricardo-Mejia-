@@ -657,6 +657,9 @@ body {
 /* Featured Project Styling */
 .project-card.featured-project {
     grid-column: 1 / -1;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
     background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(118, 75, 162, 0.1));
     border: 3px solid var(--color-accent);
     box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
