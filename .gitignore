@@ -1,5 +1,5 @@
-# Python
-*.py
+# Temporary Python scripts
+create_*.py
 __pycache__/
 *.pyc
 
