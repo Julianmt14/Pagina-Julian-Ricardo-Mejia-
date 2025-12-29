@@ -740,6 +740,18 @@ body {
     margin: 1.5rem 0;
 }
 
+.project-link {
+    margin: 1.5rem 0 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.project-link .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .project-highlights h4,
 .project-achievements h4,
 .project-impact h4 {
