@@ -1,0 +1,19 @@
+# Temporary Python scripts
+create_*.py
+__pycache__/
+*.pyc
+
+# Temporary scripts
+create_*.sh
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db

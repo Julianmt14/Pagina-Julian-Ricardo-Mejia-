@@ -44,8 +44,11 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">Julian Ricardo Mejia</h1>
-                <p class="hero-subtitle">Desarrollador Full Stack & Ingeniero de Software</p>
+                <div class="profile-image-container">
+                    <img src="profile-photo.jpg" alt="Julian Ricardo Mejia Torres" class="profile-image">
+                </div>
+                <h1 class="hero-title">Julian Ricardo Mejia Torres</h1>
+                <p class="hero-subtitle">Ingeniero Mecánico | Desarrollador de Software</p>
                 <p class="hero-description">
                     Apasionado por crear soluciones tecnológicas innovadoras y experiencias digitales excepcionales.
                 </p>
@@ -69,26 +72,67 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        Soy un desarrollador de software con experiencia en tecnologías modernas de desarrollo web y móvil. 
-                        Mi pasión por la tecnología me ha llevado a especializarme en la creación de aplicaciones escalables 
-                        y experiencias de usuario excepcionales.
+                        Ingeniero Mecánico de la Universidad de Antioquia con una sólida formación en desarrollo de software 
+                        y tecnologías emergentes. Mi experiencia abarca desde el diseño mecánico y análisis de elementos finitos 
+                        hasta el desarrollo de aplicaciones web modernas y sistemas de machine learning.
                     </p>
                     <p>
-                        Con un enfoque en la calidad del código y las mejores prácticas de desarrollo, busco constantemente 
-                        aprender nuevas tecnologías y metodologías para entregar soluciones innovadoras que generen valor real.
+                        Me apasiona la intersección entre la ingeniería tradicional y la tecnología digital, buscando siempre 
+                        soluciones innovadoras que combinen mis conocimientos en mecánica con las últimas tendencias en 
+                        programación y automatización.
                     </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>3+</h3>
-                            <p>Años de Experiencia</p>
+                    
+                    <div class="experience-section">
+                        <h3><i class="fas fa-briefcase"></i> Experiencia Laboral</h3>
+                        <div class="experience-item">
+                            <h4>Investigador en Machine Learning</h4>
+                            <p class="company">Biobot, Universidad de Antioquia</p>
+                            <p class="date">Oct 2024 - Presente</p>
+                            <ul>
+                                <li>Desarrollo de modelos de machine learning para análisis de datos biomédicos</li>
+                                <li>Implementación de algoritmos de procesamiento de imágenes médicas</li>
+                                <li>Colaboración en proyectos de investigación interdisciplinarios</li>
+                                <li>Optimización de modelos existentes</li>
+                            </ul>
                         </div>
-                        <div class="stat">
-                            <h3>15+</h3>
-                            <p>Proyectos Completados</p>
+                        <div class="experience-item">
+                            <h4>Desarrollador Full Stack</h4>
+                            <p class="company">Freelance</p>
+                            <p class="date">2023 - Presente</p>
+                            <ul>
+                                <li>Desarrollo de aplicaciones web con React y Node.js</li>
+                                <li>Diseño e implementación de APIs RESTful</li>
+                                <li>Integración de bases de datos SQL y NoSQL</li>
+                            </ul>
                         </div>
-                        <div class="stat">
-                            <h3>5+</h3>
-                            <p>Tecnologías Dominadas</p>
+                        <div class="experience-item">
+                            <h4>Asistente de Investigación</h4>
+                            <p class="company">Facultad de Ingeniería, UdeA</p>
+                            <p class="date">2022 - 2023</p>
+                            <ul>
+                                <li>Análisis de elementos finitos</li>
+                                <li>Simulación CFD</li>
+                                <li>Desarrollo de scripts de automatización</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="education-section">
+                        <h3><i class="fas fa-graduation-cap"></i> Educación</h3>
+                        <div class="education-item">
+                            <h4>Ingeniería Mecánica</h4>
+                            <p class="institution">Universidad de Antioquia</p>
+                            <p class="date">2018 - 2024</p>
+                        </div>
+                        <div class="education-item">
+                            <h4>Desarrollo Web Full Stack</h4>
+                            <p class="institution">Formación Continua</p>
+                            <p class="date">2023 - 2024</p>
+                        </div>
+                        <div class="education-item">
+                            <h4>Machine Learning e IA</h4>
+                            <p class="institution">Formación Continua</p>
+                            <p class="date">2023 - Presente</p>
                         </div>
                     </div>
                 </div>
@@ -190,105 +234,134 @@
         <div class="container">
             <h2 class="section-title">Proyectos Destacados</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <!-- Featured Odoo Project -->
+                <div class="project-card featured-project">
+                    <div class="featured-badge">
+                        <i class="fas fa-star"></i>
+                        Proyecto Destacado
+                    </div>
                     <div class="project-image">
-                        <i class="fas fa-shopping-cart"></i>
+                        <img src="odoo-project.jpg" alt="Sistema ERP con Odoo">
+                        <div class="project-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
                     </div>
                     <div class="project-content">
-                        <h3>E-Commerce Platform</h3>
+                        <h3>Sistema ERP con Odoo</h3>
                         <p>
-                            Plataforma de comercio electrónico completa con React, Node.js y MongoDB. 
-                            Incluye gestión de productos, carrito de compras y sistema de pagos.
+                            Desarrollo e implementación completa de un sistema ERP usando Odoo. Personalización de módulos, 
+                            integración con sistemas externos, automatización de procesos y desarrollo de módulos personalizados.
                         </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
+                        <div class="project-features">
+                            <h4>Características principales:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Gestión integral de inventarios y ventas</li>
+                                <li><i class="fas fa-check"></i> Módulos personalizados para manufactura</li>
+                                <li><i class="fas fa-check"></i> Integración con APIs externas</li>
+                                <li><i class="fas fa-check"></i> Automatización de flujos de trabajo</li>
+                                <li><i class="fas fa-check"></i> Dashboard con reportes en tiempo real</li>
+                                <li><i class="fas fa-check"></i> Sistema de gestión de calidad (QMS)</li>
+                            </ul>
+                        </div>
+                        <div class="project-technologies">
+                            <h4>Tecnologías utilizadas:</h4>
+                            <div class="tags">
+                                <span class="tag">Odoo 16</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">XML</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">QWeb</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">Linux</span>
+                            </div>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Demo
+                                <i class="fab fa-github"></i> Ver Código
                             </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Universidad Exponencial Project -->
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-tasks"></i>
+                        <img src="universidad-exponencial.jpg" alt="Plataforma Universidad Exponencial">
+                        <div class="project-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
                     </div>
                     <div class="project-content">
-                        <h3>Task Management App</h3>
+                        <h3>Plataforma Universidad Exponencial</h3>
                         <p>
-                            Aplicación de gestión de tareas con funcionalidades avanzadas de colaboración, 
-                            notificaciones en tiempo real y análisis de productividad.
+                            Plataforma educativa innovadora para aprendizaje acelerado con metodologías exponenciales. 
+                            Sistema de gestión de cursos, estudiantes y contenido.
                         </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">PostgreSQL</span>
+                        <div class="project-features">
+                            <h4>Características principales:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Sistema de autenticación y roles</li>
+                                <li><i class="fas fa-check"></i> Gestión de cursos y contenidos multimedia</li>
+                                <li><i class="fas fa-check"></i> Seguimiento de progreso estudiantil</li>
+                                <li><i class="fas fa-check"></i> Panel administrativo completo</li>
+                                <li><i class="fas fa-check"></i> Sistema de evaluaciones automatizado</li>
+                            </ul>
+                        </div>
+                        <div class="project-technologies">
+                            <h4>Tecnologías utilizadas:</h4>
+                            <div class="tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">MongoDB</span>
+                                <span class="tag">Express</span>
+                                <span class="tag">JWT</span>
+                            </div>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Demo
+                                <i class="fab fa-github"></i> Ver Código
                             </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- OS Simulator Project -->
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-chart-line"></i>
+                        <img src="os-simulator.jpg" alt="Simulador de Sistema Operativo">
+                        <div class="project-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
                     </div>
                     <div class="project-content">
-                        <h3>Analytics Dashboard</h3>
+                        <h3>Simulador de Sistema Operativo en C++</h3>
                         <p>
-                            Dashboard interactivo para visualización de datos empresariales con gráficos 
-                            dinámicos, filtros avanzados y exportación de reportes.
+                            Simulador educativo de sistema operativo que implementa algoritmos de planificación de procesos 
+                            y gestión de memoria.
                         </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">D3.js</span>
-                            <span class="tech-tag">Python</span>
+                        <div class="project-features">
+                            <h4>Características principales:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Simulación de planificación de CPU (FCFS, SJF, Round Robin)</li>
+                                <li><i class="fas fa-check"></i> Gestión de memoria virtual</li>
+                                <li><i class="fas fa-check"></i> Sistema de archivos básico</li>
+                                <li><i class="fas fa-check"></i> Interfaz de línea de comandos</li>
+                                <li><i class="fas fa-check"></i> Visualización de estados de procesos</li>
+                            </ul>
+                        </div>
+                        <div class="project-technologies">
+                            <h4>Tecnologías utilizadas:</h4>
+                            <div class="tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">STL</span>
+                                <span class="tag">Algoritmos de SO</span>
+                                <span class="tag">POO</span>
+                            </div>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Mobile Fitness App</h3>
-                        <p>
-                            Aplicación móvil para seguimiento de ejercicios y nutrición con integración 
-                            de wearables y gamificación para motivar a los usuarios.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Redux</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Demo
+                                <i class="fab fa-github"></i> Ver Código
                             </a>
                         </div>
                     </div>
@@ -313,36 +386,30 @@
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <h4>Email</h4>
-                                <p>julian.mejia@email.com</p>
+                                <p>julianricardomt@gmail.com</p>
                             </div>
                         </div>
                         <div class="contact-method">
                             <i class="fas fa-phone"></i>
                             <div>
                                 <h4>Teléfono</h4>
-                                <p>+57 (xxx) xxx-xxxx</p>
+                                <p>+57 3136237334</p>
                             </div>
                         </div>
                         <div class="contact-method">
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <h4>Ubicación</h4>
-                                <p>Colombia</p>
+                                <p>Medellín, Antioquia, Colombia</p>
                             </div>
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="#" class="social-link">
+                        <a href="https://github.com/Julianmt14" class="social-link" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="https://www.linkedin.com/in/julian-ricardo-mejia-torres-6a2498319/" class="social-link" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-instagram"></i>
                         </a>
                     </div>
                 </div>
