@@ -9,20 +9,24 @@
 ## 🌟 Características
 
 ### 🎨 Diseño Moderno y Profesional
-- Interfaz limpia y moderna con gradientes y animaciones suaves
+- **Tema oscuro profesional** con paleta de colores cuidadosamente seleccionada
+- Interfaz limpia y moderna con gradientes sutiles y animaciones suaves
 - Tipografía profesional usando Google Fonts (Poppins)
 - Esquema de colores consistente con efectos hover y transiciones
 - Iconos de Font Awesome para mejorar el atractivo visual
+- **Botón flotante de WhatsApp** con animación pulse para contacto rápido
 
 ### 📱 Diseño Totalmente Responsive
 - Enfoque mobile-first para visualización óptima en todos los dispositivos
-- Menú de navegación hamburguesa para dispositivos móviles
+- Menú de navegación hamburguesa para dispositivos móviles adaptado al tema oscuro
 - Layouts flexibles que se adaptan a diferentes tamaños de pantalla
 - Interacciones táctiles amigables para usuarios móviles
 
 ### 🔧 Características Interactivas
 - Navegación con desplazamiento suave entre secciones
-- Formulario de contacto con validación del lado del cliente
+- **Formulario de contacto conectado a backend** con validación del lado del cliente y servidor
+- **Base de datos SQLite** para almacenar mensajes
+- **Notificaciones WhatsApp** opcionales cuando se envía el formulario
 - Efectos hover en habilidades y tarjetas de proyectos
 - Resaltado de enlaces de navegación activos según la posición del scroll
 - Enlaces directos a repositorios de GitHub en proyectos
@@ -30,8 +34,9 @@
 ### 🎯 Contenido Real y Actualizado
 - **6 proyectos reales** con descripciones detalladas y enlaces a repositorios
 - **Experiencia laboral verificable** en Codemak S.A.S (Oct-Dic 2024)
-- **Habilidades técnicas** organizadas por nivel de dominio
-- **Información de contacto** actualizada y funcional
+- **Habilidades técnicas** organizadas por categorías (sin niveles mostrados)
+- **Información de contacto** actualizada con LinkedIn correcto
+- **Email destacado**: julianricardomt@gmail.com
 
 ## 📄 Secciones del Portafolio
 
@@ -104,23 +109,51 @@ Información de contacto completa con:
 
 ## 🛠️ Tecnologías Utilizadas
 
+### Frontend
 | Tecnología | Uso |
 |-----------|-----|
 | **HTML5** | Marcado semántico con atributos de accesibilidad adecuados |
-| **CSS3** | Características modernas incluyendo Flexbox, CSS Grid, variables personalizadas y animaciones |
+| **CSS3** | Características modernas incluyendo Flexbox, CSS Grid, variables personalizadas y animaciones. Tema oscuro profesional |
 | **JavaScript** | Funcionalidad interactiva: validación de formularios, scroll suave, menú móvil y observadores de intersección |
 | **Font Awesome** | Biblioteca de iconos |
 | **Google Fonts** | Tipografía (Poppins) |
+
+### Backend
+| Tecnología | Uso |
+|-----------|-----|
+| **Node.js** | Runtime de JavaScript para el servidor |
+| **Express.js** | Framework web minimalista y rápido |
+| **SQLite3** | Base de datos embebida para almacenar mensajes |
+| **Axios** | Cliente HTTP para integración con WhatsApp API |
+| **CORS** | Middleware para habilitar CORS |
+| **dotenv** | Gestión de variables de entorno |
+| **body-parser** | Middleware para parsear JSON |
+
+### Integraciones
+| Servicio | Uso |
+|----------|-----|
+| **WhatsApp Business API** | Notificaciones en tiempo real de mensajes del formulario |
+| **GitHub Pages** | Hosting del sitio estático |
 
 ## 📂 Estructura del Proyecto
 
 ```
 Pagina-Julian-Ricardo-Mejia-/
 │
-├── index.html          # Estructura HTML principal
-├── styles.css          # Estilos CSS
-├── script.js           # Funcionalidad JavaScript
-└── README.md           # Documentación del proyecto
+├── index.html              # Estructura HTML principal
+├── styles.css              # Estilos CSS con tema oscuro
+├── script.js               # Funcionalidad JavaScript del frontend
+│
+├── server.js               # Servidor Express (backend)
+├── database.js             # Gestión de base de datos SQLite
+├── package.json            # Dependencias de Node.js
+├── .env.example            # Ejemplo de variables de entorno
+├── .gitignore              # Archivos ignorados por Git
+│
+├── api/
+│   └── whatsapp.js         # Integración con WhatsApp Business API
+│
+└── README.md               # Documentación del proyecto
 ```
 
 ## 🚀 Instalación y Uso
@@ -128,8 +161,9 @@ Pagina-Julian-Ricardo-Mejia-/
 ### Prerrequisitos
 - Navegador web moderno (Chrome, Firefox, Safari, Edge)
 - Editor de código (recomendado: VS Code)
+- **Node.js 16+ y npm** (para el backend)
 
-### Instalación Local
+### Instalación Frontend (Solo HTML/CSS/JS)
 
 1. **Clonar el repositorio**
    ```bash
@@ -157,6 +191,184 @@ Pagina-Julian-Ricardo-Mejia-/
    ```
    http://localhost:8000
    ```
+
+### Instalación Backend (Node.js + Express + SQLite)
+
+El backend permite que el formulario de contacto guarde mensajes en una base de datos SQLite y envíe notificaciones por WhatsApp.
+
+#### ¿Dónde llega la información del formulario? 📬
+
+Cuando alguien envía el formulario de contacto, la información llega a **3 lugares**:
+
+1. **📊 Consola del Servidor** (En tiempo real)
+   - Verás los mensajes inmediatamente en la terminal donde corre el servidor
+   - Incluye nombre, email, asunto y mensaje completo
+
+2. **💾 Base de Datos SQLite** (`portfolio.db`)
+   - Todos los mensajes se guardan permanentemente
+   - Puedes consultarlos en: `http://localhost:3000/admin/messages`
+   - Interfaz web bonita para ver todos los mensajes
+
+3. **📱 WhatsApp** (Opcional - requiere configuración)
+   - Si configuras la API, recibirás notificaciones al +57 311 584 6717
+   - No es obligatorio, el sistema funciona sin esto
+
+#### Instalación
+
+1. **Instalar dependencias**
+   ```bash
+   npm install
+   ```
+
+2. **Configurar variables de entorno** (opcional para WhatsApp)
+   
+   Crea un archivo `.env` basado en `.env.example`:
+   ```bash
+   cp .env.example .env
+   ```
+
+3. **Iniciar el servidor**
+   ```bash
+   # Modo producción
+   npm start
+   
+   # Modo desarrollo (con auto-reload)
+   npm run dev
+   ```
+
+4. **Acceder a la aplicación**
+   - **Portafolio**: http://localhost:3000
+   - **Ver mensajes**: http://localhost:3000/admin/messages  ⭐ **IMPORTANTE**
+   - **API Status**: http://localhost:3000/api/health
+
+#### Cómo ver los mensajes recibidos
+
+**Opción 1: Interfaz Web (Recomendado)** 🌐
+```
+http://localhost:3000/admin/messages
+```
+- Página web elegante con tema oscuro
+- Muestra todos los mensajes con nombre, email, asunto y fecha
+- Se actualiza con el botón "Actualizar"
+
+**Opción 2: En la Consola** 💻
+- Los mensajes aparecen automáticamente en la terminal
+- Formato limpio y fácil de leer
+
+**Opción 3: API JSON** 📊
+```
+http://localhost:3000/api/messages
+```
+- Devuelve los mensajes en formato JSON
+- Útil si quieres integrar con otra herramienta
+
+### Configuración de WhatsApp Business API (Opcional)
+
+Para habilitar notificaciones por WhatsApp cuando alguien envíe el formulario:
+
+1. **Crear cuenta en Meta for Developers**
+   - Visita: https://developers.facebook.com/
+   - Crea una aplicación de tipo "Business"
+
+2. **Configurar WhatsApp Business API**
+   - En el panel de tu app, añade el producto "WhatsApp"
+   - Completa la configuración del número de teléfono
+   - Genera un token de acceso permanente
+
+3. **Obtener credenciales**
+   - **Phone Number ID**: ID del número de WhatsApp Business
+   - **Business Account ID**: ID de la cuenta de negocio
+   - **Access Token**: Token de acceso permanente
+   - **Verify Token**: Crea uno personalizado para webhooks
+
+4. **Configurar webhook (opcional)**
+   
+   Si quieres recibir mensajes entrantes de WhatsApp:
+   ```bash
+   POST https://tu-dominio.com/api/webhook
+   ```
+
+5. **Actualizar .env**
+   ```env
+   WHATSAPP_API_TOKEN=EAAx...tu_token_real
+   WHATSAPP_PHONE_NUMBER_ID=123456789
+   WHATSAPP_BUSINESS_ACCOUNT_ID=987654321
+   VERIFY_TOKEN=mi_token_secreto_123
+   ```
+
+**Nota:** El sistema funciona sin WhatsApp API. Los mensajes se guardarán en la base de datos SQLite de todas formas.
+
+### Estructura de la Base de Datos
+
+La base de datos SQLite (`portfolio.db`) se crea automáticamente con la siguiente estructura:
+
+```sql
+CREATE TABLE messages (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    subject TEXT NOT NULL,
+    message TEXT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+### Endpoints de la API
+
+#### POST /api/contact
+Guarda un nuevo mensaje del formulario de contacto.
+
+**Request:**
+```json
+{
+    "name": "Juan Pérez",
+    "email": "juan@example.com",
+    "subject": "Consulta sobre proyecto",
+    "message": "Hola, me gustaría saber más..."
+}
+```
+
+**Response:**
+```json
+{
+    "success": true,
+    "message": "Message received successfully",
+    "id": 1
+}
+```
+
+#### GET /api/messages
+Obtiene todos los mensajes guardados (para administración).
+
+**Response:**
+```json
+{
+    "success": true,
+    "count": 5,
+    "messages": [
+        {
+            "id": 1,
+            "name": "Juan Pérez",
+            "email": "juan@example.com",
+            "subject": "Consulta",
+            "message": "Hola...",
+            "created_at": "2024-12-29 15:30:00"
+        }
+    ]
+}
+```
+
+#### GET /api/health
+Verifica el estado del servidor.
+
+**Response:**
+```json
+{
+    "status": "OK",
+    "message": "Server is running",
+    "timestamp": "2024-12-29T15:30:00.000Z"
+}
+```
 
 ## 🌐 Demo en Vivo
 
@@ -204,15 +416,23 @@ Visita el sitio web en vivo: [https://julianmt14.github.io/Pagina-Julian-Ricardo
 - ✅ Sección de Experiencia Laboral completa
 - ✅ Sección de Habilidades Técnicas organizadas por categorías
 - ✅ Información de contacto actualizada
+- ✅ **Tema oscuro profesional implementado** 🎨
+- ✅ **Backend con Node.js + Express + SQLite** 💾
+- ✅ **Integración con WhatsApp Business API** 📱
+- ✅ **Botón flotante de WhatsApp con animación** ✨
+- ✅ **Formulario conectado al backend** 🔗
+- ✅ **Niveles de habilidades eliminados** 🎯
+- ✅ **LinkedIn actualizado con URL correcta** 📧
 
 ### 📋 Actualizaciones Futuras
-- [ ] Implementar modo oscuro/claro
+- [ ] Implementar toggle modo oscuro/claro
 - [ ] Agregar más proyectos al portafolio
-- [ ] Integrar backend para formulario de contacto
 - [ ] Agregar sección de blog técnico
 - [ ] Implementar animaciones más avanzadas con GSAP
 - [ ] Añadir más certificaciones conforme las obtenga
 - [ ] Integrar Google Analytics para métricas
+- [ ] Panel de administración para ver mensajes
+- [ ] Sistema de autenticación para admin
 
 ## 🤝 Contribuciones
 

@@ -35,9 +35,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+        navbar.style.background = 'rgba(26, 26, 26, 0.98)';
     } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.background = 'rgba(26, 26, 26, 0.95)';
     }
 });
 
@@ -64,30 +64,55 @@ window.addEventListener('scroll', function() {
 });
 
 // Contact form handling
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
     // Get form data
     const formData = new FormData(this);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
+    const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        subject: formData.get('subject'),
+        message: formData.get('message')
+    };
     
     // Basic validation
-    if (!name || !email || !subject || !message) {
+    if (!data.name || !data.email || !data.subject || !data.message) {
         showNotification('Por favor completa todos los campos', 'error');
         return;
     }
     
-    if (!isValidEmail(email)) {
+    if (!isValidEmail(data.email)) {
         showNotification('Por favor ingresa un email válido', 'error');
         return;
     }
     
-    // Simulate form submission
-    showNotification('¡Mensaje enviado con éxito! Te contactaré pronto.', 'success');
-    this.reset();
+    try {
+        // Determine API URL based on environment
+        const apiUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+            ? 'http://localhost:3000/api/contact'
+            : '/api/contact';
+        
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok && result.success) {
+            showNotification('¡Mensaje enviado con éxito! Te contactaré pronto.', 'success');
+            this.reset();
+        } else {
+            showNotification(result.error || 'Error al enviar el mensaje. Intenta nuevamente.', 'error');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        showNotification('Error de conexión. Por favor intenta más tarde o contáctame directamente por WhatsApp.', 'error');
+    }
 });
 
 // Email validation function
