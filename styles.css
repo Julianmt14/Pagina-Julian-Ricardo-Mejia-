@@ -25,6 +25,8 @@ html {
     --color-dark: #1a1a2e;
     --color-purple: #764ba2;
     --color-light: #f8f9fa;
+    --color-odoo-purple: #714B67;
+    --color-odoo-accent: #875A7B;
 }
 
 body {
@@ -195,16 +197,22 @@ body {
 
 /* Age Badge */
 .age-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--color-accent), #ffed4e);
-    color: var(--color-dark);
-    padding: 0.6rem 1.5rem;
+    display: none;
+}
+
+/* Availability Badge */
+.availability-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--color-odoo-purple), var(--color-odoo-accent));
+    color: white;
+    padding: 12px 24px;
     border-radius: 25px;
     font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
-    animation: pulse 2s ease-in-out infinite;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(113, 75, 103, 0.3);
+    animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
@@ -386,6 +394,18 @@ body {
 .education-status {
     color: var(--color-success);
     font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.education-details ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+}
+
+.education-details li {
+    padding: 0.3rem 0;
+    color: var(--color-text-secondary);
     font-size: 0.95rem;
 }
 
@@ -844,6 +864,54 @@ body {
     border-color: var(--color-primary);
 }
 
+/* Odoo Confidential Project Card */
+.project-card.odoo-confidential {
+    border: 2px solid var(--color-odoo-purple);
+    background: linear-gradient(135deg, rgba(113, 75, 103, 0.1), rgba(135, 90, 123, 0.05));
+}
+
+.confidential-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--color-odoo-purple);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(113, 75, 103, 0.4);
+    z-index: 10;
+}
+
+.odoo-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.odoo-logo {
+    max-width: 200px;
+    height: auto;
+}
+
+.confidential-note {
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid #ffc107;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.confidential-note strong {
+    color: var(--color-accent);
+}
+
 /* Interests Section */
 .interests-section {
     margin-top: 4rem;
@@ -1268,11 +1336,6 @@ body {
 
     .hero-subtitle {
         font-size: 1rem;
-    }
-
-    .age-badge {
-        font-size: 0.95rem;
-        padding: 0.5rem 1.2rem;
     }
 
     .btn {
