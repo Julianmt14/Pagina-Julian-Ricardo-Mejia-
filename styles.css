@@ -773,6 +773,11 @@ body {
     font-size: 5rem;
 }
 
+.project-image.odoo-logo-container,
+.featured-project .project-image.odoo-logo-container {
+    background: white;
+}
+
 .project-content {
     padding: 2rem;
 }
