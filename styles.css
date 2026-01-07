@@ -35,9 +35,7 @@ body {
     color: var(--color-text-primary);
     background-color: var(--color-bg-dark);
 }
-.nav-link.active {
-    color: #875A7B !important;.nav-link.active {
-    color: #875A7B !important;
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
