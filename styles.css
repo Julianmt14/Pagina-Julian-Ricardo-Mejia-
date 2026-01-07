@@ -55,6 +55,9 @@ body {
     transition: all 0.3s ease;
 }
 
+.nav-link.active {
+    color: #875A7B;
+}
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
