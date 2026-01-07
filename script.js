@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', addRevealAnimations);
 const style = document.createElement('style');
 style.textContent = `
     .nav-link.active {
-        color: #3498db !important;
+        color: #875A7B !important;
     }
     .nav-link.active::after {
         width: 100% !important;
